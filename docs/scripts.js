@@ -13,7 +13,8 @@ async function search(e) {
 	e.preventDefault();
 	const query = INPUT.value;
 	if (query !== "") {
-		toggleInfo(false)
+		toggleInfo()
+		INFO_OPEN = false
 		RESULTS.innerHTML = "";
 		LOADER.style.display = "block";
 		INPUT.disabled = true;
