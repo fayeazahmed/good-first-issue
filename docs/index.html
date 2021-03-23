@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>First Issue Finder</title>
+		<meta
+			name="description"
+			content="A place to scrape out good first issues"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="./styles.css" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+	</head>
+
+	<body>
+		<nav>
+			<button class="btn btn-outline-dark">
+				<i class="fa fa-info" aria-hidden="true"></i>
+			</button>
+			<h3 class="header">Good First Issue Finder</h3>
+		</nav>
+
+		<form class="searchform mx-auto">
+			<div class="searchform__loader"></div>
+			<input
+				class="form-control"
+				type="text"
+				name="searchtext"
+				id="searchtext"
+			/>
+			<div class="d-flex searchform__div">
+				<label for="searchtext">Search for repositories...</label>
+				<div class="d-flex align-items center">
+					<div class="searchform__spinner bg-dark"></div>
+					<button type="submit" class="btn btn-sm btn-dark">
+						<i class="fa fa-github" aria-hidden="true"></i> Start scraping
+					</button>
+				</div>
+			</div>
+		</form>
+
+		<div class="results container"></div>
+
+		<div class="info container">
+			<p>
+				This is a web scraping project with python - beautfulsoup4. If one is
+				looking to start contributing to open source, finding issues with the
+				tag <span>good first issue</span> is a great way to start the journey.
+				But it can be quite hard to find such issues manually going through
+				different repositories.<br />
+				So here you search a term, flask server recieves it, web scraper
+				searches for that in github, collects results for upto 5 pages, then
+				goes thorugh them to find issues labeled with 'good first issue'. Then
+				returns the data which is fetched using axios in client side. <br />
+				Performance wise, maybe using python wasn't really the best idea. I did
+				a web scraping project with c# once, compared to that, this felt quite
+				slower. But it's made primarily for project purposes, and I really
+				wanted to use python in it.
+			</p>
+		</div>
+
+		<div class="loader">
+			<i class="fa fa-spinner" aria-hidden="true"></i>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="./scripts.js" async defer></script>
+	</body>
+</html>
