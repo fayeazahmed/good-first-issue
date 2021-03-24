@@ -13,8 +13,8 @@ async function search(e) {
 	e.preventDefault();
 	const query = INPUT.value;
 	if (query !== "") {
-		toggleInfo()
-		INFO_OPEN = false
+		INFO_OPEN = true
+		INFO_BTN.click()
 		RESULTS.innerHTML = "";
 		LOADER.style.display = "block";
 		INPUT.disabled = true;
@@ -55,13 +55,8 @@ function toggleInfo() {
 FORM.addEventListener("submit", search);
 
 INFO_BTN.addEventListener("click", () => {
-	if(INFO_OPEN) {
-		toggleInfo()
-		INFO_OPEN = false
-		return
-	}
 	toggleInfo()
-	INFO_OPEN = true
+	INFO_OPEN = !INFO_OPEN
 })
 
 function appendResult(resultSet) {
